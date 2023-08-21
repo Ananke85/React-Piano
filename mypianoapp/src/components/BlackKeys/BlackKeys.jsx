@@ -1,18 +1,22 @@
 import { useState } from "react";
-import "./blackKeys.css";
+import styles from "./blackKeys.module.css";
 
 const BlackKeys = () => {
+  const columnLeftNotes = ["DO#", "RE#"];
+  const columnRightNotes = ["FA#", "SOL#", "LA#"];
+
   return (
-    <div className="blackKeys">
-      <div className="columnLeft">
-        <button className="blackKey">DO#</button>
-        <button className="blackKey">RE#</button>
+    <div className={styles.blackKeys}>
+      <div className={styles.columnLeft}>
+        {columnLeftNotes.map((note) => (
+          <button key={note} >{note}</button>
+        ))}
       </div>
 
-      <div className="columnRight">
-        <button className="blackKey">FA#</button>
-        <button className="blackKey">SOL#</button>
-        <button className="blackKey">LA#</button>
+      <div className={styles.columnRight}>
+        {columnRightNotes.map((note) => (
+          <button key={note} >{note}</button>
+        ))}
       </div>
     </div>
   );

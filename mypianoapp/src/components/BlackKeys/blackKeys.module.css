@@ -5,7 +5,6 @@
   position: relative;
   top: -350px;
   font-size: 0.8em;
-
 }
 
 .columnLeft {
@@ -19,24 +18,20 @@
 
 .columnRight {
   position: relative;
-
   left: 52px;
   display: flex;
   flex-direction: row;
   gap: 5px;
 }
-button.blackKey {
+.blackKeys button {
   background-color: black;
-  color: white;
+  color: var(--pink);
   height: 250px;
 }
 
-.row1 {
-  display: flex;
-  justify-content: center;
-}
 
-button.blackKey:hover {
+
+.blackKeys button:hover {
   background-color: var(--green);
-  color: black;
+  color: var(--purple);
 }

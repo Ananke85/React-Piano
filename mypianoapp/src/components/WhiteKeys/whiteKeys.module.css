@@ -1,0 +1,15 @@
+.whiteKeys {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5px;
+}
+
+.whiteKeys button {
+  font-size: 1em;
+  color: var(--pink);
+}
+
+.whiteKeys button:hover {
+  color: var(--purple);
+}

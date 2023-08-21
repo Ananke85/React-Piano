@@ -8,10 +8,9 @@
   display: flex;
   flex-direction: column;
   box-shadow: 3px 3px 10px rgba(219, 219, 219, 0.7);
-  
 }
 
-button {
+.piano button {
   width: 95px;
   height: 350px;
   background-color: white;
@@ -23,28 +22,8 @@ button {
   font-size: 1.5em;
   font-weight: bold;
   color: var(--purple);
- 
 }
 
-button:hover {
+.piano button:hover {
   background-color: var(--green);
-}
-
-/*button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
