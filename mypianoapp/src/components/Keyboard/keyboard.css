@@ -1,0 +1,52 @@
+.keyboardContainer {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+
+button.keyboardPause {
+    position: relative;
+    width: 220px;
+    height: 100px;
+    background-color: #cb4b79;
+    border-radius: 20px;
+    background-image: url('./src/assets/pause_button.png');
+    background-size: 70px 70px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button.keyboardPause:hover {
+    background-color: #9c5d99;
+}
+
+button.keyboardPlay {
+    width: 220px;
+    height: 100px;
+    background-color: #cb4b79;
+    border-radius: 20px;
+    background-image: url('./src/assets/play_button.png');
+    background-size: 70px 70px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button.keyboardPlay:hover {
+    background-color: #9c5d99;
+    
+}
+
+button.keyboardStop {
+    width: 220px;
+    height: 100px;
+    background-color: #cb4b79;
+    border-radius: 20px;
+    background-image: url('./src/assets/stop_button.png');
+    background-size: 70px 70px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button.keyboardStop:hover {
+    background-color: #9c5d99;
+}

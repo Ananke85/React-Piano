@@ -1,0 +1,48 @@
+.piano {
+  width: 1000px;
+  height: 750px;
+  background-color: #32203b;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 10px 20px 2px #ecb8ea6e;
+  
+}
+
+button {
+  width: 100px;
+  height: 450px;
+  background-color: white;
+  border: 3px solid #9c5d99;
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #32203b;
+ 
+}
+
+button:hover {
+  background-color: #78eade;
+}
+
+/*button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}

@@ -1,0 +1,40 @@
+.blackKeys {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    top: -450px;
+}
+
+.columnLeft {
+    position: relative;
+    
+    left: -58px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 5px;
+}
+
+.columnRight {
+    position: relative;
+    
+    left: 52px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+button.blackKey {
+    background-color: black;
+    color: white;
+    height: 300px;
+}
+
+.row1 {
+    display: flex;
+    justify-content: center;
+}
+
+button.blackKey:hover {
+    background-color: #78eade;
+}
