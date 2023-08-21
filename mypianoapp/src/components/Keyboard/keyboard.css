@@ -1,52 +1,28 @@
 .keyboardContainer {
-    display: flex;
-    justify-content: center;
-    gap: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
 }
 
-button.keyboardPause {
-    position: relative;
-    width: 220px;
-    height: 100px;
-    background-color: #cb4b79;
-    border-radius: 20px;
-    background-image: url('./src/assets/pause_button.png');
-    background-size: 70px 70px;
-    background-repeat: no-repeat;
-    background-position: center;
+.keyboardContainer button {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  background-color: var(--pink);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
 }
 
-button.keyboardPause:hover {
-    background-color: #9c5d99;
+.keyboardContainer span {
+  font-size: 2em;
+  color: white;
 }
 
-button.keyboardPlay {
-    width: 220px;
-    height: 100px;
-    background-color: #cb4b79;
-    border-radius: 20px;
-    background-image: url('./src/assets/play_button.png');
-    background-size: 70px 70px;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-button.keyboardPlay:hover {
-    background-color: #9c5d99;
-    
-}
-
-button.keyboardStop {
-    width: 220px;
-    height: 100px;
-    background-color: #cb4b79;
-    border-radius: 20px;
-    background-image: url('./src/assets/stop_button.png');
-    background-size: 70px 70px;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-button.keyboardStop:hover {
-    background-color: #9c5d99;
+.keyboardContainer button:hover {
+  background-color: var(--lilac);
 }

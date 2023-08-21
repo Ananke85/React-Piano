@@ -7,7 +7,7 @@ import Keyboard from '../Keyboard/Keyboard';
 const Piano = () => {
     return (
         <div className="piano">
-            <h2>Play with music</h2>
+            {/* <h2>Play with music</h2> */}
             <Keyboard />
             <WhiteKeys />
             <BlackKeys />

@@ -1,8 +1,10 @@
 :root {
   font-family: 'Roboto', sans-serif;
-  line-height: 1.5;
+  line-height: 1.3;
   font-weight: 400;
   height: 100vh;
+  width: 100vw;
+  
   
 
   color: white;
@@ -17,25 +19,32 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --purple: #32203b;
+  --lilac: #9c5d99;
+  --pink: #cb4b79;
+  --green: #78eade;
 }
 
 
-/*body {
+body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
-}*/
+}
 
 h1 {
-  font-size: 4.5em;
+  font-size: 3.5em;
   line-height: 1.1;
   font-family: 'Kaushan Script', cursive;
 }
 
 h2 {
-  font-size: 2.5em;
+  font-size: 2em;
+  line-height: 1.1;
+}
+h3 {
+  font-size: 1.6em;
   line-height: 1.1;
 }
 

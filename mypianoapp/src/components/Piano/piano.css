@@ -1,31 +1,33 @@
 .piano {
   width: 1000px;
   height: 750px;
-  background-color: #32203b;
+  width: 800px;
+  height: 520px;
+  background-color: var(--purple);
   border-radius: 30px;
   display: flex;
   flex-direction: column;
-  box-shadow: 5px 10px 20px 2px #ecb8ea6e;
+  box-shadow: 3px 3px 10px rgba(219, 219, 219, 0.7);
   
 }
 
 button {
-  width: 100px;
-  height: 450px;
+  width: 95px;
+  height: 350px;
   background-color: white;
-  border: 3px solid #9c5d99;
+  border: 3px solid var(--lilac);
   border-radius: 0 0 8px 8px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   font-size: 1.5em;
   font-weight: bold;
-  color: #32203b;
+  color: var(--purple);
  
 }
 
 button:hover {
-  background-color: #78eade;
+  background-color: var(--green);
 }
 
 /*button {
