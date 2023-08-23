@@ -7,8 +7,12 @@ import fa from "../../assets/notes/fa.wav";
 import sol from "../../assets/notes/sol.wav";
 import la from "../../assets/notes/la.wav";
 import si from "../../assets/notes/si.wav";
+import { useRecordContext } from "../RecordContext/RecordContext";
 
 const WhiteKeys = ({ playAudio }) => {
+  const { handleNotePlay, isRecording } = useRecordContext();
+  const [clickedKey, setClickedKey] = useState("");
+
   const whiteNotes = ["DO", "RE", "MI", "FA", "SOL", "LA", "SI"];
   const whiteSounds = {
     DO: do_sound,
@@ -20,16 +24,25 @@ const WhiteKeys = ({ playAudio }) => {
     SI: si,
   };
 
-  console.log("los sonidos", whiteSounds);
   const handleNoteClick = (note) => {
-    console.log("tocando");
     playAudio(whiteSounds[note]);
+    setClickedKey(note);
+    if (isRecording) {
+      handleNotePlay(note); 
+    }
+    setTimeout(() => {
+      setClickedKey("");
+    }, 200);
   };
 
   return (
     <div className={styles.whiteKeys}>
       {whiteNotes.map((note) => (
-        <button key={note} onClick={() => handleNoteClick(note)}>
+        <button
+          key={note}
+          onClick={() => handleNoteClick(note, whiteSounds[note])}
+          className={clickedKey === note ? styles.clicked : ""}
+        >
           {note}
         </button>
       ))}

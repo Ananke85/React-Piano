@@ -1,24 +1,24 @@
 import React, { useRef, useState } from "react";
 import styles from "./piano.module.css";
-import WhiteKeys from "../WhiteKeys/whiteKeys";
+import WhiteKeys from "../WhiteKeys/WhiteKeys";
 import BlackKeys from "../BlackKeys/BlackKeys";
 import Keyboard from "../Keyboard/Keyboard";
+import { useRecordContext } from "../RecordContext/RecordContext";
 
 const Piano = () => {
-  const audioRef = useRef(null);
-  const playAudio = (sound) => {
-    audioRef.current.src = sound;
-    audioRef.current.play();
-  };
+  const { playlist, audioRef, playAudio } = useRecordContext();
 
   return (
-    <div className={styles.piano}>
-      {/* <h2>Play with music</h2> */}
-      <Keyboard />
-      <WhiteKeys playAudio={playAudio} />
-      <BlackKeys playAudio={playAudio} />
+    <>
+      <div className={styles.piano}>
+        <Keyboard />
+        <WhiteKeys playAudio={playAudio} />
+        <BlackKeys playAudio={playAudio} />
+      </div>
       <audio ref={audioRef} />
-    </div>
+
+      {playlist.length > 0 && <div>Your playlist:{playlist.join(", ")}</div>}
+    </>
   );
 };
 
