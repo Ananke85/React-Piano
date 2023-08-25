@@ -12,6 +12,7 @@
   height: 50px;
   background-color: var(--pink);
   border-radius: 20px;
+  border: none;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -25,4 +26,8 @@
 
 .keyboardContainer button:hover {
   background-color: var(--lilac);
+}
+
+.keyboardContainer button:focus {
+  background-color: var(--green);
 }

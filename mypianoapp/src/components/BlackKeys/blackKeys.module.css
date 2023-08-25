@@ -29,9 +29,14 @@
   height: 250px;
 }
 
-
-
 .blackKeys button:hover {
   background-color: var(--green);
   color: var(--purple);
+}
+
+.blackKeys button.clicked {
+  background-color: var(--lilac);
+  color: white;
+  border-color: white;
+
 }
