@@ -7,8 +7,8 @@ import sol_octave from "../../assets/notes/sol-stretched.wav";
 import la_octave from "../../assets/notes/la-stretched.wav";
 import { useRecordContext } from "../RecordContext/RecordContext";
 
-const BlackKeys = ({ playAudio }) => {
-  const { handleNotePlay, isRecording} = useRecordContext()
+const BlackKeys = () => {
+  const { handleNotePlay, isRecording, playAudio } = useRecordContext();
   const [clickedKey, setClickedKey] = useState("");
   const columnLeftNotes = ["DO#", "RE#"];
   const columnRightNotes = ["FA#", "SOL#", "LA#"];
@@ -27,7 +27,7 @@ const BlackKeys = ({ playAudio }) => {
     playAudio(blackSoundsLeft[note]);
     setClickedKey(note);
     if (isRecording) {
-      handleNotePlay(note); 
+      handleNotePlay(note);
     }
     setTimeout(() => {
       setClickedKey("");
@@ -37,7 +37,7 @@ const BlackKeys = ({ playAudio }) => {
     playAudio(blackSoundsRight[note]);
     setClickedKey(note);
     if (isRecording) {
-      handleNotePlay(note); 
+      handleNotePlay(note);
     }
     setTimeout(() => {
       setClickedKey("");

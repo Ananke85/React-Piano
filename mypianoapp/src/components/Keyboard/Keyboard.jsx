@@ -1,22 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import styles from "./keyboard.module.css";
 import { useRecordContext } from "../RecordContext/RecordContext";
 
-const Keyboard = () => {
+const Keyboard = ({ selectedPlaylistIndex }) => {
   const {
-    recordedNotes,
     setRecordedNotes,
+    recordedNotes,
     isRecording,
     setIsRecording,
     isPlaying,
     setIsPlaying,
-    playRecordedNotes, 
+    playRecordedNotes,
+    playlist,
+    audioRef,
   } = useRecordContext();
 
   const startRecording = () => {
     setRecordedNotes([]);
     setIsRecording(true);
-    console.log("recording")
   };
 
   const stopRecording = () => {
@@ -25,56 +26,49 @@ const Keyboard = () => {
 
   const startPlaying = () => {
     setIsPlaying(true);
-    playRecordedNotes()
-    console.log("playing")
+
+    if (selectedPlaylistIndex !== null) {
+      const selectedSong = playlist[selectedPlaylistIndex];
+      playRecordedNotes(selectedSong);
+      // Pass an array with the selected song to play
+    } else {
+      playRecordedNotes(recordedNotes);
+    }
   };
 
   const stopPlaying = () => {
     setIsPlaying(false);
   };
 
+  // Listen to the 'ended' event to change the icon when playback finishes
+  useEffect(() => {
+    const audioElement = audioRef.current;
+    audioElement.addEventListener("ended", () => {
+      setIsPlaying(false);
+    });
+
+    return () => {
+      audioElement.removeEventListener("ended", () => {
+        setIsPlaying(false);
+      });
+    };
+  }, []);
+
   return (
     <div className={styles.keyboardContainer}>
-      
       <button onClick={isPlaying ? stopPlaying : startPlaying}>
         <span className={`icon-media-${isPlaying ? "pause" : "play"}`}></span>
       </button>
-      
+
       <h2>Play with music</h2>
-      
+
       <button onClick={isRecording ? stopRecording : startRecording}>
         <span
           className={`icon-media-${isRecording ? "stop" : "record"}`}
         ></span>
       </button>
-      
     </div>
   );
 };
 
 export default Keyboard;
-
-
-{/* <div className={styles.keyboardContainer}>
-      <button>
-        <span className="icon-media-pause"></span>
-      </button>
-      <button onClick={isPlaying ? stopPlaying : startPlaying}>
-        <span className={`icon-media-${isPlaying ? "pause" : "play"}`}></span>
-      </button>
-      <button>
-        <span className="icon-media-stop"></span>
-      </button>
-      <h2>Play with music</h2>
-      <button>
-        <span className="icon-media-record"></span>
-      </button>
-      <button onClick={isRecording ? stopRecording : startRecording}>
-        <span
-          className={`icon-media-${isRecording ? "stop" : "record"}`}
-        ></span>
-      </button>
-      <button>
-        <span className="icon-media-play"></span>
-      </button>
-    </div> */}

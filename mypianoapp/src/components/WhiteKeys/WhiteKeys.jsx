@@ -9,8 +9,8 @@ import la from "../../assets/notes/la.wav";
 import si from "../../assets/notes/si.wav";
 import { useRecordContext } from "../RecordContext/RecordContext";
 
-const WhiteKeys = ({ playAudio }) => {
-  const { handleNotePlay, isRecording } = useRecordContext();
+const WhiteKeys = () => {
+  const { handleNotePlay, isRecording, playAudio } = useRecordContext();
   const [clickedKey, setClickedKey] = useState("");
 
   const whiteNotes = ["DO", "RE", "MI", "FA", "SOL", "LA", "SI"];
@@ -28,7 +28,7 @@ const WhiteKeys = ({ playAudio }) => {
     playAudio(whiteSounds[note]);
     setClickedKey(note);
     if (isRecording) {
-      handleNotePlay(note); 
+      handleNotePlay(note);
     }
     setTimeout(() => {
       setClickedKey("");

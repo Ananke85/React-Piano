@@ -46,16 +46,20 @@ export const RecordProvider = ({ children }) => {
 
   const handleNotePlay = (note) => {
     if (isRecording) {
-      setRecordedNotes((prevNotes) => {
-        const newNotes = [...prevNotes, note];
-        console.log("Recorded Notes:", newNotes); 
-        setPlaylist(newNotes);
-        return newNotes;
-      });
+      setRecordedNotes((prevNotes) => [...prevNotes, note]);
     }
   };
 
-  console.log("la playlist", playlist);
+  useEffect(() => {
+    if (!isRecording && recordedNotes.length > 0) {
+      if (playlist.length === 0) {
+        setPlaylist([recordedNotes]);
+      } else {
+        setPlaylist((prevPlaylists) => [...prevPlaylists, recordedNotes]);
+      }
+      setRecordedNotes([]);
+    }
+  }, [isRecording, recordedNotes, playlist]);
 
   const audioRef = useRef(null);
   const playAudio = (sound) => {
@@ -63,13 +67,38 @@ export const RecordProvider = ({ children }) => {
     audioRef.current.play();
   };
 
-  const playRecordedNotes = () => {
-    playlist.forEach((note, index) => {
-      setTimeout(() => {
-        console.log("Playing note:", note);
+  const playRecordedNotes = (notes) => {
+    // Stop any ongoing audio playback
+    audioRef.current.pause();
+    audioRef.current.currentTime = 0;
+
+    const playNextNote = (index) => {
+      if (index < notes.length) {
+        const note = notes[index];
         playAudio(noteSounds[note]);
-      }, index * 500);
-    });
+        audioRef.current.onended = () => {
+          playNextNoteWithDelay(index + 1, delayBetweenNotes);
+        };
+      }
+    };
+
+    const playNextNoteWithDelay = (index, delay) => {
+      setTimeout(() => {
+        playNextNote(index);
+      }, delay);
+    };
+
+    const delayBetweenNotes = 50; // Adjust this value for the desired tempo
+
+    if (Array.isArray(notes[0])) {
+      // If the array contains multiple songs
+      notes.forEach((song, songIndex) => {
+        playNextNoteWithDelay(0, songIndex * delayBetweenNotes * song.length);
+      });
+    } else {
+      // If the array contains a single song
+      playNextNoteWithDelay(0, delayBetweenNotes);
+    }
   };
 
   return (
