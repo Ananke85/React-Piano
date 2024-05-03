@@ -1,3 +1,30 @@
+.pianoContainer {
+  display: flex;
+  gap: 5em;
+}
+.songsList {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1em;
+}
+.songs {
+  text-align: left;
+  width: 15em;
+  background-color: var(--pink);
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.songs:hover {
+  background-color: var(--lilac);
+}
+
+.selectedSong {
+  background-color: var(--green);
+}
+
 .piano {
   width: 1000px;
   height: 750px;

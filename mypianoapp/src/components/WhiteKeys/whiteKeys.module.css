@@ -13,3 +13,9 @@
 .whiteKeys button:hover {
   color: var(--purple);
 }
+
+.whiteKeys button.clicked {
+  background-color: var(--lilac);
+  color: white;
+  border-color: white;
+}
