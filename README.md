@@ -24,7 +24,7 @@ This single-page web application features an array of vibrant colors. Simple and
 
 The keys change their color when hovered or clicked, helping users to understand what they are playing.
 
-![Screenshot](./Screenshots/piano.jpg)
+![Screenshot](./Screenshots/piano_UI.jpg)
 
 ### Playlist
 Located at the top of the piano are two buttons that allow users to play or record a song.
