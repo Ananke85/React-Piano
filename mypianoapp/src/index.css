@@ -6,9 +6,8 @@
   width: 100vw;
   
   
-
   color: white;
-  background-image: url("./src/assets/piano_wallpaper.png");
+  background-image: url("./assets/piano_wallpaper.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
